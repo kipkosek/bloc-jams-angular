@@ -1,5 +1,5 @@
 (function() {
-    function SongPLayer() {
+    function SongPlayer() {
         var SongPlayer = {};
 
         var currentSong = null;
@@ -35,11 +35,13 @@
             } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
                     currentBuzzObject.play();
+                    song.playing = true;
                 }
             }
         };
 
         SongPlayer.pause = function(song) {
+          console.log('pause');
             currentBuzzObject.pause();
             song.playing = false;
         };
