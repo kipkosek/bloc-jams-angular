@@ -30,7 +30,7 @@
         </div>
         <div class="control-group volume">
             <span class="ion-volume-high icon"></span>
-            <seek-bar value= "{{ player.Bar.songPlayer.volume }}" max="100" on-change="playerBar.songPlayer.setVolume(value)"></seek-bar>
+            <seek-bar on-change="playerBar.songPlayer.setVolume(value)"></seek-bar>
         </div>
     </div>
 </section>
