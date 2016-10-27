@@ -29,7 +29,13 @@
             <h3 class="artist-name">{{ album.albumData.artist }}</h3>
         </div>
         <div class="control-group volume">
+<<<<<<< HEAD
             <span class="ion-volume-high icon"></span>
+=======
+            <span class="ion-volume-high icon"
+                  ng-click="playerBar.songPlayer.mute()">
+            </span>
+>>>>>>> extra-credit
             <seek-bar on-change="playerBar.songPlayer.setVolume(value)"></seek-bar>
         </div>
     </div>

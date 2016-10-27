@@ -30,6 +30,7 @@
             currentBuzzObject.bind('timeupdate', function() {
                 $rootScope.$apply(function() {
                     SongPlayer.currentTime = currentBuzzObject.getTime();
+                    SongPlayer.autoplay();
                 });
             });
 
@@ -138,6 +139,13 @@
               playSong(song);
             }
         };
+
+        SongPlayer.autoplay = function() {
+            if (currentBuzzObject && SongPlayer.currentTime === SongPlayer.currentSong.duration) {
+                SongPlayer.next();
+            }
+        };
+
         /**
         * @function setCurrentTime
         * @desc Set current time (in seconds) of currently playing song
@@ -152,6 +160,12 @@
         SongPlayer.setVolume = function(volume) {
             if (currentBuzzObject) {
                 SongPlayer.volume = currentBuzzObject.setVolume(volume);
+            }
+        };
+
+        SongPlayer.mute = function() {
+            if (currentBuzzObject) {
+                SongPlayer.volume = currentBuzzObject.setVolume(0);
             }
         };
 
